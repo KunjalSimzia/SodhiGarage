@@ -42,11 +42,7 @@ public class RegisterServlet extends HttpServlet {
 		  try {
 			  registerDao.inserted(registerBean); 
               HttpSession session = request.getSession();
-			  //response.sendRedirect ("registration.jsp?status=1);
-			  response.setContentType("text/html");
-			  PrintWriter out = response.getWriter();  //Returns a PrintWriter object that can send character text to the client
-			  out.println("<h1>Registered successfully</h1>");
-			  response.sendRedirect("Regiter.jsp");
+			  response.sendRedirect("Register.jsp");
         } catch (ClassNotFoundException e) {
 			System.out.println("Class not found...");
             e.printStackTrace();

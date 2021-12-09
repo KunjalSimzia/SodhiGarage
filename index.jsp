@@ -80,7 +80,7 @@
                                 <li class="active"><a href="index.html">home</a></li>
                                 <li><a href="services.html">services</a></li>
                                 <li><a href="about.html">about us</a></li>
-                                <li><a href="appointment.html">appointment</a></li>
+                                <li><a href="appointment.jsp">appointment</a></li>
                                 <li><a href="contact.html">contact</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->

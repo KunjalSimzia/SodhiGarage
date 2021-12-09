@@ -43,12 +43,12 @@ public class RegisterDao {
 
         } catch (SQLException e) {
 			
-			if(((SQLException) e).getErrorCode()==1062)
+			/* if(((SQLException) e).getErrorCode()==1062)
 			{
 				
-			}
+			} */
             // process sql exception
-			
+			System.err.println("Message: " + e.getMessage());
         }
         return result;
     }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from premiumlayers.com/html/mechanic/appointment.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Dec 2021 16:49:38 GMT -->
@@ -141,10 +141,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="preferedTimeRange" class="mainLabel">Preferred time range of appointment</label>
+                                <label for="preferedTimeRange" class="mainLabel">Vehicle Type</label>
+                                <div class="row m0">	
+									<input type="radio" name="vehicle" value="2-Wheeler">
+									<label>2-Wheeler</label>
+									<input type="radio" name="vehicle" value="4-Wheeler">
+	  								<label>4-Wheeler</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vcompany" class="mainLabel">Vehicle Company</label>
                                 <div class="row m0">
-                                    <select class="selectpicker preferedTimeRange" name="preferedTimeRange" id="preferedTimeRange">
-                                        <option value="12pm" selected>12:00 PM - 02:00PM</option>
+									<select class="selectpicker" name="vcompany" id="vcompany">
+                                        <option value="None" selected>None</option>
                                         <option value="02pm">02:00 PM - 04:00PM</option>
                                         <option value="04pm">04:00 PM - 06:00PM</option>
                                         <option value="06pm">06:00 PM - 08:00PM</option>
@@ -152,6 +162,30 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="vyear" class="mainLabel">Vehicle Year</label>
+                                <div class="row m0">
+									<select id="ddlYears"></select>
+									<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+									<script type="text/javascript">
+										$(function () {
+											//Reference the DropDownList.
+											var ddlYears = $("#ddlYears");
+											//Determine the Current Year.
+											var currentYear = (new Date()).getFullYear();
+											//Loop and add the Year values to DropDownList.
+											for (var i = 2000; i <= currentYear; i++) {
+												var option = $("<option />");
+												option.html(i);
+												option.val(i);
+												ddlYears.append(option);
+											}
+										});
+									</script>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="stayOrNot" class="mainLabel">When I bring my vehicle in for service, I will:</label>                            
                                 <div class="row m0">
@@ -229,76 +263,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row m0"><div class="col-sm-12"><h4>Personal Information</h4></div></div>
-                    <div class="row m0 personalInformations">
-                        <div class="col-sm-4">
-                            <ul class="list-group row m0">
-                                <li class="list-group-item"><input type="text" class="form-control" placeholder="Full Name *" name="fullName" id="fullName" required></li>
-                                <li class="list-group-item"><input type="text" class="form-control" placeholder="Address" name="address" id="address"></li>
-                                <li class="list-group-item"><input type="text" class="form-control" placeholder="City" name="city" id="city"></li>
-                                <li class="list-group-item">
-                                    <select class="selectpicker stateProvince" name="stateProvince" id="stateProvince">
-                                        <option disabled selected>Sate Province</option>
-                                        <option value="Dhaka">Dhaka</option>
-                                        <option value="Tongi">Tongi</option>
-                                        <option value="Uttara">Uttara</option>
-                                        <option value="Kamarpara">Kamarpara</option>
-                                        <option value="NayaNagar">NayaNagar</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <ul class="list-group row m0">
-                                <li class="list-group-item"><input type="email" class="form-control" placeholder="e-mail *" name="email" id="email" required></li>
-                                <li class="list-group-item"><input type="email" class="form-control" placeholder="Confirm e-mail *" name="c_email" id="c_email" required></li>
-                                <li class="list-group-item"><input type="tel" class="form-control" placeholder="Phone Number *" name="phoneNumber" id="phoneNumber" required></li>
-                                <li class="list-group-item">
-                                    <select class="selectpicker preferredContactMethod" name="preferredContactMethod" id="preferredContactMethod" required>
-                                        <option disabled selected>Preferred Contact Method *</option>
-                                        <option value="Email">Email</option>
-                                        <option value="Phone">Phone</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <ul class="list-group row m0">
-                                <li class="list-group-item">
-                                    <select class="selectpicker vehicleMake" name="vehicleMake" id="vehicleMake" required>
-                                        <option disabled selected>Vehicle Make *</option>
-                                        <option value="op1">Option 1</option>
-                                        <option value="op2">Option 2</option>
-                                        <option value="op3">Option 3</option>
-                                    </select>
-                                </li>
-                                <li class="list-group-item">
-                                    <select class="selectpicker vehicleModel" name="vehicleModel" id="vehicleModel" required>
-                                        <option disabled selected>Vehicle Model *</option>
-                                        <option value="op1">Option 1</option>
-                                        <option value="op2">Option 2</option>
-                                        <option value="op3">Option 3</option>
-                                    </select>
-                                </li>
-                                <li class="list-group-item">
-                                    <select class="selectpicker vehicleYear" name="vehicleYear" id="vehicleYear" required>
-                                        <option disabled selected>Vehicle Year *</option>
-                                        <option value="op1">Option 1</option>
-                                        <option value="op2">Option 2</option>
-                                        <option value="op3">Option 3</option>
-                                    </select>
-                                </li>
-                                <li class="list-group-item">
-                                    <select class="selectpicker fuelType" name="fuelType" id="fuelType" required>
-                                        <option disabled selected>Fuel Type *</option>
-                                        <option value="op1">Option 1</option>
-                                        <option value="op2">Option 2</option>
-                                        <option value="op3">Option 3</option>
-                                    </select>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                     <div class="row m0">
