@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mechanic - Creative Auto Service Template</title>
+    <title>Sodhi Garage</title>
     
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -54,7 +54,7 @@
     <header class="row">        
         <div class="container">
             <div class="row logo_line">
-                <div class="fleft logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <div class="fleft logo"><a href="index.jsp" style="color:#000080;"><h1>Sodhi Garage</h1></a></div>
                 <div class="fright pre_contact">
                     <ul class="list-inline">
                         <li><a href="mailto:contact@mechanic.com"><span><i class="fa fa-envelope-o"></i></span>contact@mechanic.com</a></li>
@@ -77,11 +77,12 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="mainNav">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">home</a></li>
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="about.html">about us</a></li>
+                                <li class="active"><a href="index.jsp">home</a></li>
+                                <li><a href="services.jsp">services</a></li>
+                                <li><a href="invoice.jsp">about us</a></li>
                                 <li><a href="appointment.jsp">appointment</a></li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="contact.jsp">contact</a></li>
+								<li><a href="about.jsp">about us</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

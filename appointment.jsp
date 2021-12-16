@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mechanic - Creative Auto Service Template</title>
+    <title>Sodhi Garage</title>
     
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -60,7 +60,7 @@
     <header class="row">        
         <div class="container">
             <div class="row logo_line">
-                <div class="fleft logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <div class="fleft logo"><a href="index.jsp" style="color:#000080;"><h1>Sodhi Garage</h1></a></div>
                 <div class="fright pre_contact">
                     <ul class="list-inline">
                         <li><a href="mailto:contact@mechanic.com"><span><i class="fa fa-envelope-o"></i></span>contact@mechanic.com</a></li>
@@ -83,29 +83,12 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="mainNav">
                             <ul class="nav navbar-nav">
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="about.html">about us</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">gallery</a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="gallery2.html">gallery 2 collumn</a></li>
-                                        <li><a href="gallery3.html">gallery 3 collumn</a></li>
-                                        <li><a href="gallery4.html">gallery 4 collumn</a></li>
-                                        <li><a href="gallery-details.html">gallery details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">news</a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="blog1s.html">blog 1 collumn + Sidebar</a></li>
-                                        <li><a href="blog2s.html">blog 2 collumn + Sidebar</a></li>
-                                        <li><a href="blog3.html">blog 3 collumn</a></li>
-                                        <li><a href="single-post.html">single post</a></li>
-                                    </ul>
-                                </li>
-                                <li class="active"><a href="appointment.html">appointment</a></li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="index.jsp">home</a></li>
+                                <li><a href="services.jsp">services</a></li>
+                                <li><a href="invoice.jsp">Invoice</a></li>
+								<li class="active"><a href="appointment.jsp">appointment</a></li>
+                                <li><a href="contact.jsp">contact</a></li>
+								<li><a href="about.jsp">about us</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
@@ -130,18 +113,17 @@
                 <h4><i class="fa fa-calendar"></i> Appointment Information</h4>
             </div> <!--Section Title-->
             <div class="row m_30">
-                <form action="#" class="row m0" id="appointmentForm" method="post" name="appointment"> <!-- // action="appointment_process.php" -->
+                <form action="<%=request.getContextPath()%>/AppointServlet" class="row m0" id="appointmentForm" method="post">
                     <div class="row m0">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="preferedDate" class="mainLabel">Preferred date of appointment</label>
+                                <label for="preferedDate" class="mainLabel">Preferred date of appointment:</label>
                                 <div class="input-group date preferredDateInput">
-                                    <input type="text" class="form-control" placeholder="Monday, 23 February 2015" name="preferedDate" id="preferedDate">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="date" placeholder="Enter Date" name="preferedDate" id="preferedDate">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="preferedTimeRange" class="mainLabel">Vehicle Type</label>
+                                <label for="preferedTimeRange" class="mainLabel">Vehicle Type:</label>
                                 <div class="row m0">	
 									<input type="radio" name="vehicle" value="2-Wheeler">
 									<label>2-Wheeler</label>
@@ -151,22 +133,36 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="vcompany" class="mainLabel">Vehicle Company</label>
+                                <label for="vcompany" class="mainLabel">Vehicle Company:</label>
                                 <div class="row m0">
-									<select class="selectpicker" name="vcompany" id="vcompany">
+									<select name="vcompany" id="vcompany">
                                         <option value="None" selected>None</option>
-                                        <option value="02pm">02:00 PM - 04:00PM</option>
-                                        <option value="04pm">04:00 PM - 06:00PM</option>
-                                        <option value="06pm">06:00 PM - 08:00PM</option>
-                                        <option value="08pm">08:00 PM - 10:00PM</option>
+                                        <option value="BMW">BMW</option>
+                                        <option value="Audi">Audi</option>
+										<option value="Maruti Suzuki">Maruti Suzuki</option>
+										<option value="Hyundai Motors">Hyundai Motors</option>
+										<option value="Tata Motors">Tata Motors</option>
+										<option value="Toyota">Toyota</option>
+										<option value="Kia Motors">Kia Motors</option>
+										<option value="Skoda">Skoda</option>
+										<option value="MG">MG</option>
+										<option value="Mercedes">Mercedes</option>
+										<option value="Volkswagen">Volkswagen</option>
+										<option value="Honda">Honda</option>
+										<option value="Renault">Renault</option>
+										<option value="Mahindra">Mahindra</option>
+										<option value="Jeep">Jeep</option>
+										<option value="Ford">Ford</option>
+										<option value="Nissan">Nissan</option>
+										<option value="Datsun">Datsun</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="vyear" class="mainLabel">Vehicle Year</label>
+                                <label for="vyear" name="vyear" class="mainLabel">Vehicle Year</label>
                                 <div class="row m0">
-									<select id="ddlYears"></select>
+									<select id="ddlYears" name="vyear"></select>
 									<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 									<script type="text/javascript">
 										$(function () {
@@ -186,19 +182,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="stayOrNot" class="mainLabel">When I bring my vehicle in for service, I will:</label>                            
-                                <div class="row m0">
-                                    <div class="checkbox-inline">
-                                        <input type="checkbox" name="stayOrNot" id="dropVahicle" value="Drop my Vehicle off">
-                                        <label class="checkboxLabel" for="dropVahicle">Drop my Vehicle off</label>
-                                    </div>                           
-                                    <div class="checkbox-inline">
-                                        <input type="checkbox" name="stayOrNot" id="stayFor" value="Stay in waiting room">
-                                        <label class="checkboxLabel" for="stayFor">Stay in waiting room</label>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -267,7 +251,7 @@
                     </div>
                     <div class="row m0">
                         <div class="col-sm-12 submitButton m0">
-                            <button type="submit" class="fright btn btn-default"><i class="fa fa-calendar"></i> Submit</button>
+                            <button align="center" type="submit" class="fright btn btn-default"><i class="fa fa-calendar"></i> Submit</button>
                         </div>
                     </div>
                 </form>   
@@ -287,13 +271,7 @@
     </section> <!--Blog Posts-->
     
     <footer class="row">
-        <div class="container">
-            <div class="row widget twitterSlide">
-                <h4 class="widgetTitle">Latest Tweets</h4>
-                <div class="tweetsHere">
-                    <div class="tweets_feed"></div>
-                </div>
-            </div>
+        <div class="container">          
             <div class="row m_30">
                 <div class="col-sm-4 widget recentPostWidget">
                     <div class="row m0 widgetInner">
@@ -341,14 +319,8 @@
    
     <!--jQuery, Bootstrap and other vendor JS-->
     
-    <!--jQuery-->
-    <script src="js/jquery-2.1.3.min.js"></script>
     
-    <!--Google Maps-->
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     
-    <!--Bootstrap JS-->
-    <script src="js/bootstrap.min.js"></script>
     
     <!--Nice Scroll-->
     <script src="vendors/nicescroll/jquery.nicescroll.js"></script>
@@ -358,10 +330,6 @@
     
     <!--Lightshot-->
     <script src="vendors/lightbox/js/lightbox.min.js"></script>
-    
-    <!--Tweets-->
-    <script src="vendors/tweet/scripts.js"></script>
-    <script src="vendors/tweet/tweetie.min.js"></script>
     
     <!--Counter Up-->
     <script src="vendors/waypoints/waypoints.min.js"></script>
@@ -388,7 +356,7 @@
     
     <!--Strella JS-->
     <script src="js/mechanic.js"></script>
-    <script src="js/appointment.js"></script>
+
 </body>
 
 <!-- Mirrored from premiumlayers.com/html/mechanic/appointment.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Dec 2021 16:49:40 GMT -->

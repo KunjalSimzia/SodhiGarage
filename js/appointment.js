@@ -112,7 +112,7 @@ $(document).ready(function(){
                     $(form).ajaxSubmit({
                         type:"POST",
                         data: $(form).serialize(),
-                        url:"appointment_process.php",
+                        url:"web/AppointServlet",
                         success: function() {
                             $('#appointmentForm :input').attr('disabled', 'disabled');
                             $('#appointmentForm').fadeTo( "slow", 0.15, function() {

@@ -47,4 +47,13 @@
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
 
+  <servlet>
+	<servlet-name>AppointServlet</servlet-name>
+	<servlet-class>web.AppointServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>AppointServlet</servlet-name>
+        <url-pattern>/AppointServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
